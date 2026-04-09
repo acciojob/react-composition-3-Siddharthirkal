@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './../styles/App.css';
+import "../styles/App.css";
 
 const Tooltip = ({ text, children }) => {
   const [show, setShow] = useState(false);
@@ -9,15 +9,10 @@ const Tooltip = ({ text, children }) => {
       className="tooltip"
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
-      style={{ display: "inline-block", position: "relative" }}
     >
       {children}
 
-      {show && (
-        <span className="tooltiptext">
-          {text}
-        </span>
-      )}
+      {show && <div className="tooltiptext">{text}</div>}
     </div>
   );
 };
